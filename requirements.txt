@@ -1,0 +1,9 @@
+PyMySQL~=1.0.3
+pandas==2.0.0
+numpy==1.23.5
+baostock~=0.8.8
+SQLAlchemy~=2.0.9
+schedule~=1.2.0
+akshare~=1.9.48
+scikit-learn~=1.2.2
+prophet~=1.1.2
