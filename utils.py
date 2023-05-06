@@ -45,7 +45,7 @@ def get_index_components(index_code='399102'):
 获取股票列表的历史K线
     -- by baostock
 """
-def get_history_k(stock_list, stt_date, end_date, freq='d', adjust='2'):
+def get_history_k(stock_list, stt_date, end_date, freq='d', adjust='1'):
     bs.login()
     output_list = []
     len_ = len(stock_list)
@@ -72,7 +72,7 @@ def get_history_k(stock_list, stt_date, end_date, freq='d', adjust='2'):
 
 """
 获取指定股票的表数据
-    -- by aliyun 47.109.23.249:3306
+    -- by tencent cloud 110.40.223.131
 """
 def get_remote_table(table, stk_tup, date_stt, date_end, code_col="code", date_col="date"):
     # 初始化数据库连接，使用pymysql模块

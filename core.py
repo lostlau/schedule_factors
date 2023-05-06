@@ -74,7 +74,8 @@ class factory(object):
     """
 
     def gen_size(self):
-        self.df_factors['size'] = np.log(self.df_factors['total_share'] * self.df_factors['close'])
+        # self.df_factors['size'] = np.log(self.df_factors['total_share'] * self.df_factors['close'])
+        self.df_factors['size'] = np.log(self.df_factors['total_share']*self.df_factors['eps_ttm']*self.df_factors['pe_ttm'])
 
     """
     生成beta
@@ -197,7 +198,8 @@ class factory(object):
     """
 
     def gen_earnyield(self):
-        self.df_factors['pe_to_p'] = self.df_factors['eps_ttm_forecast'] / self.df_factors['close']
+        # self.df_factors['pe_to_p'] = self.df_factors['eps_ttm_forecast'] / self.df_factors['close']
+        self.df_factors['pe_to_p'] = self.df_factors['eps_ttm_forecast']/(self.df_factors['eps_ttm']*self.df_factors['pe_ttm'])
         self.df_factors['ce_to_p'] = self.df_factors['cfo_annual_rolling'] / np.exp(self.df_factors['size'])
         self.df_factors['ep'] = 1 / self.df_factors['pe_ttm']
         self.df_factors['earnings_yield'] = 0.68 * self.df_factors['pe_to_p'] + 0.21 * self.df_factors[

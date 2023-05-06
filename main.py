@@ -10,7 +10,7 @@ warnings.filterwarnings('ignore')
 
 if __name__ == '__main__':
     print(f"现在是{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}, 开始执行定时任务...")
-    schedule.every().day.at("23:29").do(job)
+    schedule.every().day.at("20:30").do(job)
     while True:
         schedule.run_pending()
         time.sleep(1)
